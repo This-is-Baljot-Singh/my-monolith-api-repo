@@ -5,6 +5,7 @@ import uvicorn
 # --- IMPORTS ---
 # The automation will inject new module imports below this line.
 from routers import health_check
+from routers import qr_code_generator_router
 # IMPORT_ANCHOR - Do not delete
 
 app = FastAPI(
@@ -33,6 +34,7 @@ def root():
 # --- ROUTER INCLUSION ---
 # The automation will inject new router inclusions below this line.
 app.include_router(health_check.router)
+app.include_router(qr_code_generator_router.router)
 # INCLUDE_ANCHOR - Do not delete
 
 if __name__ == "__main__":
